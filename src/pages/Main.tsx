@@ -50,7 +50,7 @@ const Main: React.FC = () => {
 
             <div className="container">
 
-                <Title text="Reactique components"></Title>
+                <Title text="Reactique UI components"></Title>
 
                 <div className="row">
                     <div className="col-4">
