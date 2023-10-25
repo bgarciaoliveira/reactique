@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../styles/toast.css';
 
 interface ToastProps {
     message: string;
     type: 'success' | 'error';
     duration?: number; // Miliseconds
+    onClose: () => void;
 }
 
-const Toast: React.FC<ToastProps> = ({ message, type, duration = 5000 }) => {
-    const [visible, setVisible] = useState(true);
-
+const Toast: React.FC<ToastProps> = ({ message, type, duration = 5000, onClose }) => {
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setVisible(false);
-        }, duration);
+        const timer = setTimeout(onClose, duration);
 
         return () => {
             clearTimeout(timer);
         };
-    }, [duration]);
+    }, [duration, onClose]);
 
     const getToastStyles = () => {
         switch (type) {
@@ -38,8 +35,6 @@ const Toast: React.FC<ToastProps> = ({ message, type, duration = 5000 }) => {
                 return {};
         }
     };
-
-    if (!visible) return null;
 
     return (
         <div className="toast" style={getToastStyles()}>
