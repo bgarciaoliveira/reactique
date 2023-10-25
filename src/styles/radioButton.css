@@ -1,0 +1,66 @@
+.radio-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-label-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Averta', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0.5px;
+    color: #70707B;
+}
+
+.radio-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* Faz o elemento ter formato de círculo */
+    background-color: #F4F4F5;
+    border: 2px solid #70707B;
+    position: relative;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    /* Espaçamento entre o círculo e o texto */
+}
+
+.radio-input:checked+.radio-label-wrapper .radio-button {
+    border: 2px solid #26272B;
+}
+
+.radio-input:checked+.radio-label-wrapper .radio-button::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #26272B;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-input:checked+.radio-label-wrapper {
+    color: #26272B;
+}
+
+.radio-group.inline .radio-container {
+    display: inline-flex;
+    margin: 10px;
+}
+
+.radio-group.block .radio-container {
+    display: flex;
+    margin: 10px 0;
+}

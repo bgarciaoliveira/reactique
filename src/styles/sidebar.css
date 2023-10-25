@@ -1,0 +1,41 @@
+.sidebar {
+    width: 80px;
+    height: 100vh;
+    padding: 24px 8px 24px 8px;
+    border-right: 1px solid #E4E4E7;
+    background: linear-gradient(0deg, #FAFAFA, #FAFAFA), linear-gradient(0deg, #E4E4E7, #E4E4E7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-top,
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-icon {
+    width: 32px;
+    height: auto;
+    margin: 8px 0;
+    margin-bottom: 16px;
+}
+
+.sidebar-icon.logo {
+    margin-bottom: 24px;
+}
+
+.sidebar-bottom .icon:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-icon:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
